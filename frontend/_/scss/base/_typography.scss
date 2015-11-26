@@ -1,0 +1,144 @@
+// ==========================================================================
+// Web Fonts
+// ==========================================================================
+// @include font(AvenirNext, avenirnext-reg);
+// @include font(AvenirNextMed, avenirnext-med);
+// @include font(AvenirNextDemi, avenirnext-demi);
+// @include font(AvenirNextBold, avenirnext-bold);
+// @include font('iconfont', icomoon);
+// @font-face { 
+//     font-family: 'FreightTextBook'; 
+//         src: url('/assets/fonts/2E2C4B_0_0.eot'); 
+//         src: url('/assets/fonts/2E2C4B_0_0.eot?#iefix') format('embedded-opentype'),
+//              url('/assets/fonts/2E2C4B_0_0.woff2') format('woff2'),
+//              url('/assets/fonts/2E2C4B_0_0.woff') format('woff'),
+//              url('/assets/fonts/2E2C4B_0_0.ttf') format('truetype');
+// }
+
+// @font-face {
+//     font-family: 'FreightTextLt'; 
+//         src: url('/assets/fonts/2E2C4B_1_0.eot');
+//         src: url('/assets/fonts/2E2C4B_1_0.eot?#iefix') format('embedded-opentype'),
+//              url('/assets/fonts/2E2C4B_1_0.woff2') format('woff2'),
+//              url('/assets/fonts/2E2C4B_1_0.woff') format('woff'),
+//              url('/assets/fonts/2E2C4B_1_0.ttf') format('truetype');
+// }
+
+
+//----------------------------------------------------------------
+//  Titles
+//----------------------------------------------------------------
+* {
+    @extend %aa;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+    color: $titleColor;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+
+    // /* Better Font Rendering =========== */
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+}
+
+h1, 
+.alpha {
+  @include fontSize(24);
+
+  @media only screen and (min-width: $mediumScreen + px) {
+    @include fontSize(30);
+  }
+}
+
+h2, 
+.beta {
+  @include fontSize(30);    
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(35);
+}
+}
+
+h3, 
+.gamma {
+  @include fontSize(20);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(24);
+}
+}
+
+h4, 
+.delta {
+  @include fontSize(18);
+  color: $bodyColor;
+
+  @media only screen and (min-width: ($mediumScreen + px)) {
+    @include fontSize(20);
+}
+}
+
+h5, 
+.epsilon {
+  @include fontSize(16);
+}
+
+h6, 
+.zeta {
+}
+
+p,
+li {
+    color: $bodyColor;
+    @include fontSize(16);
+
+    &.heading {
+        @include fontSize(20);
+        text-transform: uppercase;
+        position: relative;
+        @include prop(margin-bottom, 20);
+
+        &:before {
+          position: absolute;
+          content: "";
+          @include pre(width, 100%);
+          @include prop(height, 1);
+          @include pre(bottom, 0);
+          @include pre(left, 0);
+      }
+  }
+
+  &.tiny {
+    @include fontSize(14);
+    line-height: 1.6;
+}
+}
+
+ol,
+ul {
+
+    li {
+
+    }
+}
+
+ul {
+
+    li {
+
+    }
+}
+
+ol {
+
+    li {
+
+    }
+}
