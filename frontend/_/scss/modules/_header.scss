@@ -1,3 +1,35 @@
 header.global {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    @include prop(padding, 10, 0);
+    border-bottom: 1px solid $black;
 
+    .cello-logo {
+        float: left;
+    }
+
+    .header-nav {
+        float: right;
+        @include prop(padding, 10, 0);
+
+        li {
+            display: none;
+            @include prop(margin, 0, 20);
+
+            @media only screen and (min-width: $smallScreen + px) {
+                display: inline-block;
+            }
+
+            &.mobile {
+                display: inline-block;
+
+                @media only screen and (min-width: $smallScreen + px) {
+                    display: none;
+                }
+            }
+        }
+    }
 }
