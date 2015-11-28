@@ -6,8 +6,6 @@
     background: url(https://placeholdit.imgix.net/~text?txtsize=33&w=1200&h=400) center center no-repeat $white;
     background-size: cover;
     background-color: white;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
     background-position-y: 30%;
     background-position-x: 50%;
 
@@ -23,12 +21,82 @@
 
     .home-search {
         position: relative;
-        width: 70%;
-        left: 15%;
+        width: 50%;
+        left: 25%;
+
+        input {
+            font-size: 28px;
+            @include prop(height, 50);
+            line-height: 1;
+        }
     }
 
     .delta,
     input {
         @include prop(margin, 0, 0, 5, 0);
+    }
+}
+
+#home-featured-plans {
+    @include prop(padding, 40, 0);
+    overflow: hidden;
+    position: relative;
+
+    .gamma {
+        @include prop(padding, 10, 0);
+    }
+
+    ul {
+        @include prop(margin, 0);
+        @include pre(width, 100%);
+        float: left;
+    }
+
+    .featured-plan {
+        border: 1px solid $black;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        @include prop(margin-bottom, 10);
+    }    
+
+    .image {
+        position: relative;
+        background: url(https://placeholdit.imgix.net/~text?txtsize=33&w=1200&h=400) center center no-repeat;
+        background-size: cover;
+        @include prop(min-height, 200);
+
+        .featured-tag {
+            position: absolute;
+            right: 0;
+            top: 10px;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: $black;
+            background: $blue;
+            @include prop(padding, 5);
+        }
+    }
+
+    .content {
+        @include prop(padding, 20);
+        overflow: hidden;
+
+        .price {
+            @include prop(padding, 10, 0);
+            @include prop(margin, 0);
+            line-height: 1;
+            background: $turq;
+            color: $black;
+        }
+
+        .first-column,
+        .second-column {
+            display: inline-block;
+            @include prop(padding-top, 20);
+
+            li {
+                // list-style-type: disc;
+                @include prop(padding, 5);
+            }
+        }
     }
 }
