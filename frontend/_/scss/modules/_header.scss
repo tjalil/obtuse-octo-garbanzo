@@ -1,11 +1,13 @@
 header.global {
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     overflow: hidden;
     width: 100%;
     @include prop(padding, 10, 0);
     border-bottom: 1px solid $black;
+    background: $white;
 
     .cello-logo {
         float: left;

@@ -1,0 +1,34 @@
+#home-hero {
+    position: relative;
+    @include prop(margin-top, 60);
+    @include prop(min-height, 400);
+
+    background: url(https://placeholdit.imgix.net/~text?txtsize=33&w=1200&h=400) center center no-repeat $white;
+    background-size: cover;
+    background-color: white;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-y: 30%;
+    background-position-x: 50%;
+
+    .v-wrapper {
+        position: relative;
+        @include prop(padding, 0, 0, 100);
+        @include prop(min-height, 400);
+
+        @media only screen and (min-width: $smallScreen + px) {
+            @include prop(padding, 0, 0, 50);
+        }
+    }
+
+    .home-search {
+        position: relative;
+        width: 70%;
+        left: 15%;
+    }
+
+    .delta,
+    input {
+        @include prop(margin, 0, 0, 5, 0);
+    }
+}

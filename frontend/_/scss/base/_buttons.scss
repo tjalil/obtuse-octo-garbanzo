@@ -1,4 +1,21 @@
 .button,
 button,
 input[type="submit"] {
+    @include prop(padding, 10, 30);
+    @include fontSize(12);
+    letter-spacing: 1px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid $black;
+    color: $black;
+    background: $white;
+
+    &.green {
+        border: 1px solid $green;
+        background: $white;
+        color: $green;
+    }
 }
