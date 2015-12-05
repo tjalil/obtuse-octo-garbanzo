@@ -6,20 +6,46 @@ header.global {
     overflow: hidden;
     width: 100%;
     @include prop(padding, 10, 0);
-    border-bottom: 1px solid $black;
-    background: $white;
 
     .cello-logo {
         float: left;
     }
 
+    .gamma,
+    .epsilon {
+        color: $white;
+    }
+
     .header-nav {
         float: right;
-        @include prop(padding, 10, 0);
+        @include prop(padding, 18, 0);
 
         li {
             display: none;
             @include prop(margin, 0, 20);
+
+            a {
+                color: $white;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background: $green;
+                    -webkit-transition: width 0.3s ease-out;
+                    transition: width 0.3s ease-out;
+                }
+
+                &:hover {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
 
             @media only screen and (min-width: $smallScreen + px) {
                 display: inline-block;

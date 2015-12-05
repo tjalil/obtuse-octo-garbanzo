@@ -3,7 +3,7 @@
 }
 
 ::-moz-placeholder {
-   opacity: 1; 
+    opacity: 1; 
 }
 
 :-ms-input-placeholder {  
@@ -14,33 +14,33 @@
     opacity: 1;
 }
 .add-resource {
-  @include prop(padding-top, 90);
+    @include prop(padding-top, 90);
 }
 
 form {
 
-  .field {
-    @include prop(margin, 20, 0);
-  }
-
-  .radio-field {
-    p {
-      @include prop(margin, 10, 0);
-    }
-  }
-
-  .actions {
-    position: relative;
-    overflow: hidden;
-
-    .red {
-      float: left;
+    .field {
+        @include prop(margin, 20, 0);
     }
 
-    .green {
-      float: right;
+    .radio-field {
+        p {
+            @include prop(margin, 10, 0);
+        }
     }
-  }
+
+    .actions {
+        position: relative;
+        overflow: hidden;
+
+        .red {
+            float: left;
+        }
+
+        .green {
+            float: right;
+        }
+    }
 }
 
 fieldset {
@@ -50,30 +50,36 @@ input {
 }
 
 .selectWrapper {
-    
+
     select {
     }
 }
 
 input,
 textarea {
-   &:focus {
-   }
+    &:focus {
+    }
 }
 
 input[type="text"],
 input[type="search"],
 input[type="email"], 
 textarea {
-  @include pre(width, 100%);
-  outline: none;
-  @include fontSize(12);
-  @include prop(line-height, 25);
-  @include prop(padding-left, 20);
-  @include border(2, solid, $bodyColor);
-  @include pre(transition, border 0.3s ease);
+    @include pre(width, 100%);
+    outline: none;
+    @include fontSize(12);
+    @include prop(line-height, 25);
+    @include prop(padding-left, 20);
+    @include border(1, solid, transparent);
+    @include pre(transition, border 0.3s ease);
 
-  &:focus {
-      @include border(2, solid, $black);
-  }
+    &:focus {
+        @include border(1, solid, $black);
+    }
+
+    &.green {
+        &:focus {
+            @include border(1, solid, $green);
+        }
+    }
 }

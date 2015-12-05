@@ -1,21 +1,49 @@
 .button,
 button,
 input[type="submit"] {
-    @include prop(padding, 10, 30);
-    @include fontSize(12);
-    letter-spacing: 1px;
-    display: inline-block;
-    line-height: 1;
+    @include prop(padding, 15, 30);
+    @include prop(margin, 0);
+    @include fontSize(14);
+    background: transparent;
+    @include trans(background 0.3s ease-out);
     text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
     cursor: pointer;
-    outline: none;
-    border: 1px solid $black;
-    color: $black;
-    background: $white;
 
     &.green {
-        border: 1px solid $green;
-        background: $green;
         color: $white;
+        background: $green;
+
+        &:hover {
+            background: lighten($green, 10);
+        }
+    }
+
+    &.red {
+        color: $white;
+        background: $red;
+
+        &:hover {
+            background: lighten($red, 10);
+        }
+    }
+
+    &.orange {
+        color: $white;
+        background: $orange;
+
+        &:hover {
+            background: lighten($orange, 10);
+        }
+    }
+
+    &.turq {
+        color: $white;
+        background: $turq;
+
+        &:hover {
+            background: lighten($turq, 10);
+        }
     }
 }

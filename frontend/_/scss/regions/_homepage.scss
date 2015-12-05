@@ -1,39 +1,66 @@
 #home-hero {
     position: relative;
-    @include prop(margin-top, 60);
     @include prop(min-height, 400);
 
-    background: url(https://placeholdit.imgix.net/~text?txtsize=33&w=1200&h=400) center center no-repeat $white;
+    background: url('/assets/images/6.jpg') center center no-repeat;
+        // background-size: cover;    
+        // position: absolute;
+        // height: 100%;
+        // width: 100%;
+        // bottom: 0;
+        // left: 0;
+        // top: 0;
     background-size: cover;
     background-color: white;
-    background-position-y: 30%;
-    background-position-x: 50%;
 
     .v-wrapper {
         position: relative;
-        @include prop(padding, 0, 0, 100);
+        @include prop(padding, 50, 0, 100);
         @include prop(min-height, 400);
 
         @media only screen and (min-width: $smallScreen + px) {
-            @include prop(padding, 0, 0, 50);
+            @include prop(padding, 50, 0, 50);
         }
     }
 
     .home-search {
         position: relative;
-        width: 50%;
-        left: 25%;
+        overflow: hidden;
 
         input {
-            font-size: 28px;
-            @include prop(height, 50);
+            position: relative;
+            display: inline-block;
+            font-size: 18px;
+            @include prop(height, 45);
             line-height: 1;
+            float: left;
         }
+
+        a {
+            position: relative;
+            display: inline-block;
+            float: right;
+            margin: 0;
+        }
+    }
+
+    .delta {
+        color: $white;
     }
 
     .delta,
     input {
         @include prop(margin, 0, 0, 5, 0);
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
     }
 }
 
