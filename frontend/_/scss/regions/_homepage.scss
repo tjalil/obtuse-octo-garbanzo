@@ -3,23 +3,18 @@
     @include prop(min-height, 400);
 
     background: url('/assets/images/6.jpg') center center no-repeat;
-        // background-size: cover;    
-        // position: absolute;
-        // height: 100%;
-        // width: 100%;
-        // bottom: 0;
-        // left: 0;
-        // top: 0;
+    left: 0;
+    top: 0;
     background-size: cover;
     background-color: white;
 
     .v-wrapper {
         position: relative;
-        @include prop(padding, 50, 0, 100);
+        @include prop(padding, 100, 0);
         @include prop(min-height, 400);
 
         @media only screen and (min-width: $smallScreen + px) {
-            @include prop(padding, 50, 0, 50);
+            @include prop(padding, 50, 0);
         }
     }
 
@@ -27,13 +22,27 @@
         position: relative;
         overflow: hidden;
 
+        h5 {
+            display: block;
+            color: $white;
+            @include prop(margin, 0, 0, 40);
+
+            @media only screen and (min-width: $smallScreen + px) {
+                display: none;
+            }
+        }
+
         input {
             position: relative;
             display: inline-block;
-            font-size: 18px;
+            font-size: 14px;
             @include prop(height, 45);
             line-height: 1;
             float: left;
+
+            @media only screen and (min-width: $smallScreen + px) {
+                font-size: 18px;
+            }
         }
 
         a {
@@ -41,6 +50,13 @@
             display: inline-block;
             float: right;
             margin: 0;
+            width: 100%;
+            // padding: 10px 30px;
+
+            @media only screen and (min-width: 375px) {
+                // padding: 15px 30px;
+                width: auto;
+            }
         }
     }
 

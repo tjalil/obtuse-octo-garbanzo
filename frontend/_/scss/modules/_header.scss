@@ -6,27 +6,57 @@ header.global {
     overflow: hidden;
     width: 100%;
     @include prop(padding, 10, 0);
+    background: $white;
+
+    @media only screen and (min-width: $smallScreen + px) {
+        background: transparent;
+    }
 
     .cello-logo {
         float: left;
+        padding: 5px 0;
+
+        @media only screen and (min-width: $smallScreen + px) {
+            padding: 0;
+        }
+
+        h5 {
+            display: none;
+
+            @media only screen and (min-width: $smallScreen + px) {
+                display: block;
+            }
+        }
     }
 
     .gamma,
     .epsilon {
-        color: $white;
+        color: $black;
+
+        @media only screen and (min-width: $smallScreen + px) {
+            color: $white;
+        }
     }
 
     .header-nav {
         float: right;
-        @include prop(padding, 18, 0);
+        @include prop(padding, 10, 0);
+
+        @media only screen and (min-width: $smallScreen + px) {
+            @include prop(padding, 18, 0);
+        }
 
         li {
             display: none;
-            @include prop(margin, 0, 20);
+            @include prop(margin, 0, 10);
 
             a {
-                color: $white;
                 position: relative;
+                color: $black;
+
+                @media only screen and (min-width: $smallScreen + px) {
+                    color: $white;
+                }
 
                 &:before {
                     content: "";
@@ -51,8 +81,17 @@ header.global {
                 display: inline-block;
             }
 
+            @media only screen and (min-width: $mediumScreen + px) {
+                @include prop(margin, 0, 20);
+            }
+
             &.mobile {
                 display: inline-block;
+
+                a {
+                    letter-spacing: 1px;
+                    color: $green;
+                }
 
                 @media only screen and (min-width: $smallScreen + px) {
                     display: none;
